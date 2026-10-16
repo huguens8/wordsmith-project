@@ -1,0 +1,13 @@
+services:
+  db:
+    build: db
+
+  words:
+    build: words
+
+  web:
+    build: web
+    ports:
+            - "${PORT:-8000}:80"
+    volumes:
+      - ./web/static:/static
